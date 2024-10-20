@@ -1,0 +1,175 @@
+/* Color palette - NOTE: This is adjusted by the light/dark mode switch script .
+ * Do not change the color names, unless you change that script too!
+ * */
+ @define-color main_bg #0a0c10;
+ @define-color main_fg #ffffff;
+ @define-color text_fg #ffffff;
+ 
+ 
+ /* Reset all styles */
+ 
+ * {
+     color: @text_fg;
+     border: 0;
+     border-radius: 0;
+     padding: 0 0;
+     font-family: JetBrainsMono Nerd Font;
+     font-size: 15px;
+     margin-right: 5px;
+     margin-left: 5px;
+     padding-bottom:3px;
+    }
+ 
+ window#waybar {
+     background: @main_bg;
+ }
+ 
+ #workspaces button {
+     padding: 2px 0px;
+     /* border-bottom: 2px; */
+     color: @text-neutral;
+     border-color: #d8dee9;
+     border-style: solid;
+     margin-top:2px;
+ }
+ 
+ #workspaces button.focused {
+     border-bottom: 2px;
+     border-color: #a3be8c;
+     border-style: solid;
+ }
+ 
+ #workspaces button.visible {
+     border-color: #81a1c1;
+ }
+ 
+ #workspaces button.urgent {
+     border-color: #b48ead;
+ }
+ 
+ #mode {
+     color: #ebcb8b;
+ }
+ 
+ #clock, #battery, #bluetooth, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #tray, #window,#custom-launcher,#custom-power,#custom-pacman {
+     padding: 0 3px;
+     /* border-bottom: 2px; */
+     border-style: solid;
+ }
+ 
+ /* -----------------------------------------------------------------------------
+  * Module styles
+  * -------------------------------------------------------------------------- */
+ 
+ 
+ #clock {
+  color: @text_fg;
+ }
+ 
+ #backlight {
+     color: #ebcb8b;
+ }
+ 
+ #battery {
+     color: #ffffff;
+ }
+ 
+ #battery.charging {
+     color: #ffffff;
+ }
+ 
+ @keyframes blink {
+     to {
+         color: #4c566a;
+         background-color: #eceff4;
+     }
+ }
+ 
+ #battery.critical:not(.charging) {
+     background: #bf616a;
+     color: #eceff4;
+     animation-name: blink;
+     animation-duration: 0.5s;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+ }
+ 
+ #cpu {
+     color:#a3be8c ;
+ }
+ 
+ #memory {
+     color: #d3869b;
+ }
+ 
+ #network.disabled {
+     color:#3b4252;
+ }
+ 
+ #network{
+     color:#ffffff;
+ }
+ 
+ #network.disconnected {
+     color: #3b4252;
+ }
+ 
+ #pulseaudio {
+     color: #ffffff;
+ }
+ 
+ #pulseaudio.muted {
+     color: #3b4252;
+ }
+ 
+ #temperature {
+     color: #8fbcbb;
+ }
+ 
+ #temperature.critical {
+     color: #bf616a;
+ }
+ 
+ #idle_inhibitor {
+    color: #ebcb8b;
+ }
+ 
+ #tray {
+ }
+ 
+ #custom-launcher,#custom-power{
+     border-style: hidden;
+     margin-top:2px;
+ }
+ 
+ #window{
+     border-style: hidden;
+     margin-top:1px;
+ }
+ #mode{
+     margin-bottom:3px;
+ }
+ 
+ #custom-keyboard-layout{
+    color:#d08770;
+ }
+
+ #bluetooth.off{
+    color: #3b4252;
+ }
+ 
+tooltip {
+    color: @main_fg;
+    background-color: @main_bg;
+    text-shadow: none;
+    border-style: solid;
+    border-color: @main_fg;
+    border-width: 2px;
+}
+ 
+tooltip * {
+    color: @main_fg;
+    text-shadow: none;
+}
+ 

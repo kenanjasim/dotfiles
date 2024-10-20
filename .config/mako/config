@@ -1,0 +1,11 @@
+# https://github.com/altercation/solarized#the-values
+font=monospace
+background-color=#0a0c10
+text-color=#ffffff
+border-color=#666666
+border-size=0
+border-radius=8
+default-timeout=5000
+icons=1
+markup=1
+padding=10
