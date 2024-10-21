@@ -4,12 +4,29 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export ZPLUG_HOME=/home/kjasim/.zplug
+source $ZPLUG_HOME/init.zsh
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
 
+zplug "mafredri/zsh-async", from:github
+#zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "zdharma/fast-syntax-highlighting", as:plugin, defer:2
+zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
+
+zplug load
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -70,7 +87,7 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git golang docker python docker-compose )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,11 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -99,10 +116,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias clip="clip.exe"
 
-export PATH="$PATH:$HOME/go/bin"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/home/kjasim/bin
+export PATH=$PATH:/home/kjasim/.local/bin
+export GOPRIVATE="dev-gitlab.cryptoquantique.com/*"
+export GOINSECURE="dev-gitlab.cryptoquantique.com/*"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-#eval "$(goenv init -)"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$PATH:/opt/nvim-linux64/bin"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+source "$HOME/.cargo/env"
+
+eval "$(zoxide init --cmd=cd zsh)"
 eval "$(starship init zsh)"
+#. ~/bin/z.sh

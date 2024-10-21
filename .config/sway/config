@@ -27,7 +27,7 @@ set $menu rofi -show drun | xargs swaymsg exec --
 # Window gaps
 # 
 
-### Output configuration
+### Output configuratio
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/spirited.jpg fill
@@ -244,6 +244,7 @@ bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume lower
 bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
 # Source volume toggle mute
 bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+bindsym $mod+Shift+m exec swayosd-client --input-volume mute-toggle
 
 # Capslock (If you don't want to use the backend)
 bindsym --release Caps_Lock exec swayosd-client --caps-lock
@@ -297,5 +298,7 @@ exec "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 # Emoji picker
 bindsym $mod+Alt+e exec BEMOJI_PICKER_CMD="rofi -dmenu -p Emoji" bemoji -t
 
+# Add gnome keyring so compass can access passwords
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 

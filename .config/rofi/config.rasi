@@ -6,6 +6,12 @@
  * Copyright: 2017 leofa
  ***********************************************/
 
+configuration {
+  modes: "window,drun,run,ssh";
+  font: "mono 12";
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
 * {
     background:                  #0a0c10;
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
@@ -151,9 +157,4 @@ textbox-prompt-colon {
     text-color: @normal-foreground;
 }
 
-configuration {
-  modes: "window,drun,run,ssh";
-  font: "mono 12";
-  show-icons:         true;
-  icon-theme:         "Papirus";
-}
+
