@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZPLUG_HOME=/home/kjasim/.zplug
+export ZPLUG_HOME=/home/kenan/.zplug
 source $ZPLUG_HOME/init.zsh
 
 # Set name of the theme to load --- if set to "random", it will

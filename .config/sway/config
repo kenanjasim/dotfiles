@@ -18,6 +18,8 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 
+set $gnome-schema org.gnome.desktop.interface
+
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -293,8 +295,13 @@ exec "dbus-update-activation-environment --systemd --all "
 exec "dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway "
 
 # Set the dark theme for all apps
-exec "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-
+exec_always {
+    gsettings set $gnome-schema color-scheme 'prefer-dark'
+    gsettings set $gnome-schema gtk-theme Adwaita
+    # gsettings set $gnome-schema icon-theme 'Your icon theme'
+    # gsettings set $gnome-schema cursor-theme 'Your cursor Theme'
+    # gsettings set $gnome-schema font-name 'Your font name'
+}
 # Emoji picker
 bindsym $mod+Alt+e exec BEMOJI_PICKER_CMD="rofi -dmenu -p Emoji" bemoji -t
 
