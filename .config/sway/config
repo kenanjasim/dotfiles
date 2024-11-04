@@ -31,7 +31,9 @@ set $menu rofi -show drun | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/spirited.jpg fill
-#
+
+output DP-1 resolution 3440x1440@99.982Hz
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -209,6 +211,7 @@ for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="blueberry.py"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [class="MongoDB Compass"] floating enable
 
 # Settings for touchpads, enable natural scroll and
 # two finger right click
