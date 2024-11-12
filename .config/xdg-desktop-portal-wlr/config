@@ -1,7 +1,7 @@
 [screencast]
-chooser_cmd="slurp -f %o -o"
-#chooser_type=dmenu
-#chooser_cmd=wofi --show=dmenu
-max_fps=30
+#chooser_cmd="slurp -f %o -o"
+chooser_type=dmenu
+chooser_cmd=rofi -dmenu
+max_fps=60
 # exec_before=disable_notifications.sh
 # exec_after=enable_notifications.sh
