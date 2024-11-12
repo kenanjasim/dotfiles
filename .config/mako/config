@@ -9,3 +9,4 @@ default-timeout=5000
 icons=1
 markup=1
 padding=10
+height=1000

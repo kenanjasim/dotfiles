@@ -5,19 +5,19 @@ opacity = 1
 size = 14.0
 
 [font.bold]
-family = "Noto Sans Mono"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Noto Sans Mono"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Noto Sans Mono"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Noto Sans Mono"
+family = "JetBrains Mono"
 style = "Regular"
 
 # Colors (Base16 Default Dark)
