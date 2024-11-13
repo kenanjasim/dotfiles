@@ -1,5 +1,5 @@
 # https://github.com/altercation/solarized#the-values
-font=monospace
+font="JetBrains Mono"
 background-color=#0a0c10
 text-color=#ffffff
 border-color=#666666
