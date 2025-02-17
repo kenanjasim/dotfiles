@@ -7,3 +7,5 @@ stow . --adopt
 ```
 
 from the root of this project.
+
+Linux part of this took large inspiration from [these dotfiles](https://github.com/sahib/dotfiles) 
